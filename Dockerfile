@@ -23,4 +23,5 @@ RUN apk add --no-cache --virtual .build-deps \
       && mkdir -p /var/app \
       && cd /var/app \
       && npm install node-rdkafka@${NODE_RD_KAFKA_VERSION} --production --registry=https://registry.npm.taobao.org \
+      && rm -rf node_modules/node-rdkafka/deps \
       && apk del .build-deps
